@@ -1,0 +1,232 @@
+:root {
+  --bg: #f4f5f8;
+  --panel: #ffffff;
+  --panel-light: rgba(15, 23, 54, 0.08);
+  --primary: #2d3e8b;
+  --secondary: #5a7dd8;
+  --accent: #f5a524;
+  --text: #0f172a;
+  --muted: #5e6b8f;
+  --border: rgba(15, 23, 54, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Roboto", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header.hero {
+  padding: 2rem clamp(1.5rem, 5vw, 4rem);
+  background: #fff;
+  border-bottom: 1px solid rgba(15, 23, 54, 0.08);
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.hero h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin: 0.2rem 0 0.6rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+}
+
+.hero .subtitle {
+  margin: 0;
+  color: var(--muted);
+  max-width: 48ch;
+}
+
+.hero .eyebrow {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.hero-meta {
+  text-align: right;
+  color: var(--muted);
+}
+
+.badge {
+  background: rgba(45, 62, 139, 0.08);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  border: 1px solid rgba(45, 62, 139, 0.15);
+}
+
+main {
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 20px 45px rgba(15, 23, 54, 0.07);
+}
+
+.panel h2,
+.panel h3 {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 0;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.panel-header p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.kpi-card {
+  padding: 1.2rem;
+  border-radius: 14px;
+  background: #f7f8fc;
+  border: 1px solid var(--panel-light);
+}
+
+.kpi-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.kpi-value {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0.25rem 0;
+}
+
+.kpi-change {
+  font-size: 0.9rem;
+}
+
+.kpi-change.positive {
+  color: #16a34a;
+}
+
+.kpi-change.negative {
+  color: #dc2626;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.charts-grid article {
+  background: transparent;
+  border: none;
+  padding: 1rem 0 0;
+}
+
+.charts-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.table-panel table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table-panel th,
+.table-panel td {
+  padding: 0.85rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.table-panel th {
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.table-wrapper {
+  max-height: 420px;
+  overflow: auto;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.insight-card {
+  padding: 1.1rem;
+  border-radius: 14px;
+  background: rgba(90, 125, 216, 0.08);
+  border: 1px solid rgba(90, 125, 216, 0.2);
+}
+
+.insight-card h4 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.insight-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: #fff;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  header.hero {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .hero-meta {
+    text-align: left;
+  }
+}
