@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Campaign Performance Tracker</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Marketing Analytics</p>
+        <h1>Social Media Campaign Performance Tracker</h1>
+        <p class="subtitle">Real-time insights across Facebook, Instagram, and Twitter campaigns</p>
+      </div>
+      <div class="hero-meta">
+        <span class="badge">Live Data</span>
+        <p>Source: outputs/campaign_metrics_powerbi.csv</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel kpi-panel">
+        <h2>Executive Overview</h2>
+        <div class="kpi-grid" id="kpiGrid">
+          <!-- KPI cards injected via JS -->
+        </div>
+      </section>
+
+      <section class="panel charts-grid">
+        <article>
+          <div class="panel-header">
+            <h3>Platform Spend Distribution</h3>
+          </div>
+          <canvas id="platformSpendChart" height="280"></canvas>
+        </article>
+        <article>
+          <div class="panel-header">
+            <h3>Top Campaigns by ROAS</h3>
+          </div>
+          <canvas id="topCampaignsChart" height="280"></canvas>
+        </article>
+        <article class="full-width">
+          <div class="panel-header">
+            <h3>Monthly Revenue Trend</h3>
+          </div>
+          <canvas id="revenueTrendChart" height="240"></canvas>
+        </article>
+      </section>
+
+      <section class="panel table-panel">
+        <div class="panel-header">
+          <h2>Campaign Leaderboard</h2>
+          <p>Sorted by ROAS · Hover to view KPI details</p>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Campaign</th>
+                <th>Platform</th>
+                <th>Objective</th>
+                <th>Ad Spend ($)</th>
+                <th>Revenue ($)</th>
+                <th>ROAS</th>
+                <th>ROI (%)</th>
+                <th>CTR (%)</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboardBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel insights-panel">
+        <div class="panel-header">
+          <h2>Automated Insights</h2>
+          <p>Key callouts based on current dataset</p>
+        </div>
+        <div class="insights-grid" id="insightsGrid">
+          <!-- Insights injected via JS -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built with ♥ for multi-platform campaign reporting. Data refreshed locally.</p>
+    </footer>
+  </body>
+</html>
