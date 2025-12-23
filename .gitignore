@@ -1,0 +1,42 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.spec
+.pytest_cache/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+
+# Data outputs
+data/*.csv
+!data/.gitkeep
+outputs/*
+!outputs/.gitkeep
+
+# Excel/Power BI/Reports
+dashboards/**/*.pbix
+dashboards/**/*.xlsx
+reports/**/*.pdf
+reports/**/*.png
+
+# Node / web build artifacts
+node_modules/
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / editor metadata
+.vscode/
+.idea/
+
+# Logs
+*.log
+
